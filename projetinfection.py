@@ -15,3 +15,18 @@ while jour < 366:
         rencontres = 3
     else:
         rencontres = 10
+
+    # Calcul du nombre de nouvelles infections et mise à jour du nombre total d'infectés
+    infectes = infectes * (1 - PG)
+    nouveau_infectes = (infectes * (population - infectes) * rencontres * PT) / population
+    infectes += nouveau_infectes
+
+    # Enregistrement du nombre total de personnes infectées et de nouvelles infections pour analyse ultérieure
+    infectes_par_jour += [infectes]
+    nouveau_infectes_par_jour += [nouveau_infectes]
+
+    jour += 1
+
+# Simulation de la guérison avec un vaccin après les 365 jours
+jours_apres_365 = 30
+taux_guerison_vaccin = 0.01      
