@@ -43,3 +43,16 @@ while jour < 366 + jours_apres_365:
     nouveau_infectes_par_jour += [0]  # Aucune nouvelle infection après les 365 jours
 
     jour += 1
+
+# Affichage des résultats
+jour_demande = int(input("Entrez le numéro d'un jour (de 1 à 365) : "))
+while jour_demande != 0:
+    print(f"Le nombre de personnes infectées le jour {jour_demande} est : {infectes_par_jour[jour_demande - 1]}")
+    jour_demande = int(input("Entrez le numéro d'un jour (de 1 à 365) : "))
+
+# Calcul et affichage des moyennes
+moyenne_infectes = sum(infectes_par_jour) / len(infectes_par_jour)
+print(f"Le nombre moyen de personnes infectées par jour sur l'ensemble de l'année est : {moyenne_infectes}")
+
+moyenne_nouvelles_infections = sum(nouveau_infectes_par_jour) / len(nouveau_infectes_par_jour)
+print(f"Le nombre moyen de nouvelles infections par jour sur l'ensemble de l'année est : {moyenne_nouvelles_infections}")
