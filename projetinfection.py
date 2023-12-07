@@ -56,3 +56,15 @@ print(f"Le nombre moyen de personnes infectées par jour sur l'ensemble de l'ann
 
 moyenne_nouvelles_infections = sum(nouveau_infectes_par_jour) / len(nouveau_infectes_par_jour)
 print(f"Le nombre moyen de nouvelles infections par jour sur l'ensemble de l'année est : {moyenne_nouvelles_infections}")
+
+# Affichage du résultat final sur l'état de la population
+if infectes_par_jour[-1] == 0:
+    print("La population guérira complètement.")
+elif infectes_par_jour[-1] == 11500000:
+    print("La population sera complètement infectée.")
+else:
+    print("La population sera partiellement infectée.")
+
+# Identification du premier pic du nombre de personnes infectées
+premier_pic = infectes_par_jour.index(max(infectes_par_jour)) + 1
+print(f"Le numéro du jour du premier pic du nombre de personnes infectées est : {premier_pic}")
